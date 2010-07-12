@@ -20,7 +20,7 @@ module Remarkable
           else
             nil
           end
-        end.flatten.compact
+        end.flatten(10).compact
         columns.map do |column|
           stack = column.__stack.inject { |a, b| a.to_s + "." + b.to_s }
           name = column.__name.to_s
